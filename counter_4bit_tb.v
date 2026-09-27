@@ -18,6 +18,11 @@ initial begin
 end
 
 initial begin
+    $dumpfile("counter_4bit.vcd");
+    $dumpvars(0, counter_4bit_tb);
+end
+
+initial begin
     reset = 1;
 
     #10;
@@ -34,3 +39,5 @@ initial begin
 end
 
 endmodule
+
+
