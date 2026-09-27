@@ -4,49 +4,77 @@
 
 This project implements a 4-bit synchronous up counter using Verilog HDL.
 
-The counter changes its output state on the rising edge of the clock. A reset input is provided to initialize the counter to zero.
+The counter changes its output on the rising edge of the clock. A reset input is used to initialize the counter to zero.
 
 ## Features
 
-- 4-bit synchronous counter
-- Verilog HDL implementation
+- 4-bit synchronous up counter
+- Designed using Verilog HDL
 - Positive-edge triggered clock
-- Synchronous reset
+- Reset functionality
 - Counts from 0 to 15
-- Includes a Verilog testbench for simulation
+- Includes a Verilog testbench
+- Simulated using Icarus Verilog
+- Waveform verified using EPWave
 
 ## Working
 
-The counter receives a clock signal and reset signal as inputs.
+The counter operates based on the rising edge of the clock signal.
 
-When reset is active, the counter output is set to:
+When the reset signal is active, the counter is initialized to:
 
-0000
+`0000`
 
-When reset is inactive, the counter increments by one on every rising edge of the clock.
+When reset is inactive, the counter increments by one at every rising edge of the clock.
 
-After reaching:
+The counting sequence is:
 
-1111
+`0000 → 0001 → 0010 → 0011 → ... → 1111`
 
-the counter rolls over to:
+After reaching `1111`, the counter rolls over to `0000`.
 
-0000
-
-## Files
+## Project Files
 
 | File | Description |
 |------|-------------|
-| `counter_4bit.v` | Main 4-bit synchronous counter design |
+| `counter_4bit.v` | Verilog RTL design of the 4-bit synchronous counter |
 | `counter_4bit_tb.v` | Testbench used to verify the counter |
+| `counter_waveform.png` | Simulation waveform showing the counter operation |
+
+## Simulation
+
+The design was simulated using **Icarus Verilog**.
+
+The testbench generates the clock and reset signals and monitors the counter output.
+
+### Simulation Waveform
+
+![4-Bit Counter Waveform](counter_waveform.png)
+
+The waveform shows the clock, reset, and 4-bit counter output during simulation.
 
 ## Tools & Technologies
 
 - Verilog HDL
-- Digital Logic Design
+- Icarus Verilog
+- EPWave
 - RTL Design
-- Simulation
+- Digital Logic Design
 
 ## Learning Outcome
 
-This project demonstrates basic RTL design concepts, sequential logic, clocked processes, reset operation, and Verilog testbench development.
+This project helped in understanding:
+
+- Sequential logic design
+- Synchronous counters
+- Clocked `always` blocks
+- Reset operation
+- Verilog RTL coding
+- Testbench development
+- Simulation and waveform analysis
+
+## Author
+
+**Tavva Mohana Venkata Kavya**
+
+ECE Student | Aspiring VLSI Engineer
